@@ -70,12 +70,14 @@ class _NewsDetailsScreenState extends State<NewsDetailsScreen> {
             ),
             child: ListView(
               children: [
-                Text(
-                  widget.newsTitle,
-                  style: GoogleFonts.poppins(
-                    fontSize: 20,
-                    color: Colors.black87,
-                    fontWeight: FontWeight.w700,
+                Expanded(
+                  child: Text(
+                    widget.newsTitle,
+                    style: GoogleFonts.poppins(
+                      fontSize: 20,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
                 SizedBox(height: height * 0.02),
@@ -85,10 +87,17 @@ class _NewsDetailsScreenState extends State<NewsDetailsScreen> {
                       child: Text(
                         widget.source,
                         style: GoogleFonts.poppins(
-                          fontSize: 13,
+                          fontSize: 15,
                           color: Colors.black87,
                           fontWeight: FontWeight.w600,
                         ),
+                      ),
+                    ),
+                    Text(
+                      format.format(datetime),
+                      style: GoogleFonts.poppins(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],
