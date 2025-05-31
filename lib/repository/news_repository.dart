@@ -9,7 +9,7 @@ class NewsRepository {
     String newsChannel,
   ) async {
     String url =
-        'https://newsapi.org/v2/top-headlines?sources=$newsChannel&apiKey=54d0b3017eca46ba88763c8e3d7d62fe';
+        'https://newsapi.org/v2/top-headlines?sources=$newsChannel&apiKey=$';
 
     final response = await http.get(Uri.parse(url));
     if (kDebugMode) {
@@ -25,7 +25,7 @@ class NewsRepository {
 
   Future<CategoriesNewsModel> fetchCategoriesNewsApi(String category) async {
     String url =
-        'https://newsapi.org/v2/everything?q=$category&apiKey=54d0b3017eca46ba88763c8e3d7d62fe';
+        'https://newsapi.org/v2/everything?q=$category&apiKey=$';
 
     final response = await http.get(Uri.parse(url));
     if (kDebugMode) {
@@ -50,4 +50,4 @@ class NewsRepository {
 // cnn
 // la-repubblica
 // medical-news-today
-// https://newsapi.org/v2/everything?q=general&apiKey=54d0b3017eca46ba88763c8e3d7d62fe
+
